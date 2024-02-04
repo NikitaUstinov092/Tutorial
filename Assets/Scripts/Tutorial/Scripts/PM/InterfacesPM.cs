@@ -6,13 +6,13 @@ public interface INavigateStepsPM: ITutorialPM
     string GetStepReview();
 }
 
-public interface IWinLaboratoryWorkPm: ITutorialPM
+public interface IEndTutorialPm: ITutorialPM
 {
     event Action OnModelStateChanged;
     string GetLevel();
 }
 
-public interface IStartLaboratoryWorkPm: ITutorialPM
+public interface IStartTutorialPm: ITutorialPM
 {
     event Action OnModelStateChanged;
     string GetLabName();

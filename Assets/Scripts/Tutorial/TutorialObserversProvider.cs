@@ -1,7 +1,7 @@
 using UnityEngine;
 using Zenject;
 
-public class TutorialObserversProvider : MonoBehaviour
+public class TutorialObserversProvider : MonoBehaviour, IInitializable
 {
     [SerializeField]
     private TutorialStepObserver[] _tutorialStepObservers;
@@ -9,7 +9,7 @@ public class TutorialObserversProvider : MonoBehaviour
     [SerializeField]
     private TutorialCompleteObserver[] _tutorialCompleteObservers;
     
-    public void Start()
+    void IInitializable.Initialize()
     {
         foreach (var stepObserver in _tutorialStepObservers)
         {

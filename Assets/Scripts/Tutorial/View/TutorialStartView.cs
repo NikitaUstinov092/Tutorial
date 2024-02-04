@@ -17,7 +17,7 @@ namespace StandScene.Tutorial.View
         private TextMeshProUGUI _description;
         
         [Inject] 
-        private IStartLaboratoryWorkPm _pm;
+        private IStartTutorialPm _pm;
         
         void IInitializable.Initialize()
         {

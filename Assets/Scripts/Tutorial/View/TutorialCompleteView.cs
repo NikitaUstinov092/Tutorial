@@ -7,16 +7,18 @@ namespace StandScene.Tutorial.View
 {
     public class TutorialCompleteView: MonoBehaviour, IInitializable, IDisposable
     {
-        [SerializeField] private GameObject _popup;
+        [SerializeField] 
+        private GameObject _popup;
         
-        [SerializeField] private TextMeshProUGUI _name;
+        [SerializeField] 
+        private TextMeshProUGUI _name;
         
-        [Inject] private IWinLaboratoryWorkPm _pm;
+        [Inject] 
+        private IEndTutorialPm _pm;
         void IInitializable.Initialize()
         {
             _pm.OnModelStateChanged += Show;
         }
-
         void IDisposable.Dispose()
         {
             _pm.OnModelStateChanged -= Show;

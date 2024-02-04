@@ -5,7 +5,8 @@ using Zenject;
 
     public abstract class TutorialStepObserver : MonoBehaviour, IDisposable
     {
-        [SerializeField] private TutorialStep _step;
+        [SerializeField] 
+        private TutorialStep _step;
         
         private TutorialManager _tutorialManager;
        

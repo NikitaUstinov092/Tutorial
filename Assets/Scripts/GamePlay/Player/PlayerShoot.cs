@@ -1,6 +1,5 @@
 using System;
 using Sirenix.OdinInspector;
-using Unity.Mathematics;
 using UnityEngine;
 using Zenject;
 
@@ -18,14 +17,18 @@ public class PlayerShoot : MonoBehaviour
     [Inject]
     private DiContainer _diContainer;
 
+    private GameObject _bulletParent;
+
     [Button]
     public void Fire()
     {
         if(!CanShoot)
             return;
-        Instantiate(_bullet, _firePoint.position, quaternion.identity);
-        // _diContainer.InstantiatePrefab(_bullet);
-        // _diContainer.Inject(_bullet);
+
+        if (_bulletParent == null)
+            _bulletParent = new GameObject("Bullets");
+        
+        _diContainer.InstantiatePrefabForComponent<MoveProvider>(_bullet,_firePoint.position, Quaternion.identity, _bulletParent.transform);
         OnBulletSpawned?.Invoke();
     }
 }

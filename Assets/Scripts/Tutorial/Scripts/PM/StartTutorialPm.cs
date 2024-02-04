@@ -4,7 +4,7 @@ using Zenject;
 
 namespace StandScene.Tutorial.PM
 {
-    public class StartTutorialPm: IStartLaboratoryWorkPm, IInitializable, IDisposable
+    public class StartTutorialPm: IStartTutorialPm, IInitializable, IDisposable
     {
         public event Action OnModelStateChanged;
         

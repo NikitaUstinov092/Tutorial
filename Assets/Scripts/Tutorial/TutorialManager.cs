@@ -1,9 +1,6 @@
 using System;
 using UnityEngine;
 
-
-
-    [AddComponentMenu("Tutorial/Tutorial Manager")]
     public sealed class TutorialManager : MonoBehaviour
     {
         public event Action<TutorialStep> OnStepFinished;
@@ -29,11 +26,11 @@ using UnityEngine;
         }
         
         public TutorialList GetTutorialList => _stepList;
-        public void SetUp(TutorialList stepList)
+        public void SetUp(TutorialList stepList, int currentStepIndex, bool complete)
         {
             _stepList = stepList;
-            _currentIndex = 0;
-            _isCompleted = false;
+            _currentIndex = currentStepIndex;
+            _isCompleted = complete;
             OnSetUp?.Invoke();
         }
         

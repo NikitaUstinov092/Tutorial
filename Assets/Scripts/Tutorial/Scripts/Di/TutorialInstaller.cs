@@ -18,7 +18,6 @@ public class TutorialInstaller : MonoInstaller
         Container.BindInterfacesAndSelfTo<TutorialStepView>().FromComponentsInHierarchy().AsSingle();
         Container.BindInterfacesAndSelfTo<TutorialCompleteView>().FromComponentsInHierarchy().AsSingle();
         
-       
         Container.BindInterfacesTo<NavigateStepsPm>().AsSingle();
         Container.BindInterfacesTo<StartTutorialPm>().AsSingle();
         Container.BindInterfacesTo<WinTutorialPM>().AsSingle();

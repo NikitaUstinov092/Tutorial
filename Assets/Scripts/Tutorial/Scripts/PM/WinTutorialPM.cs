@@ -1,11 +1,10 @@
 ﻿using System;
 using StandScene.Tutorial.Data;
-using UnityEngine.PlayerLoop;
 using Zenject;
 
 namespace StandScene.Tutorial.PM
 {
-    public class WinTutorialPM: IWinLaboratoryWorkPm, IInitializable, IDisposable
+    public class WinTutorialPM: IEndTutorialPm, IInitializable, IDisposable
     {
         public event Action OnModelStateChanged;
         
