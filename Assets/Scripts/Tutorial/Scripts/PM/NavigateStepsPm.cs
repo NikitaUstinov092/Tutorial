@@ -8,7 +8,8 @@ namespace StandScene.Tutorial.PM
     {
         public event Action OnModelStateChanged;
         
-        [Inject] private readonly TutorialStepInfo _stepInfo;
+        [Inject] 
+        private readonly TutorialStepInfo _stepInfo;
       
         void IInitializable.Initialize()
         {

@@ -12,17 +12,18 @@ public class TutorialInstaller : MonoInstaller
         
         Container.Bind<TutorialStartInfo>().AsSingle();
         Container.Bind<TutorialStepInfo>().AsSingle();
-        Container.Bind<TutorialWinInfo>().AsSingle();
+        Container.Bind<TutorialCompleteInfo>().AsSingle();
         
         Container.BindInterfacesAndSelfTo<TutorialStartView>().FromComponentsInHierarchy().AsSingle();
         Container.BindInterfacesAndSelfTo<TutorialStepView>().FromComponentsInHierarchy().AsSingle();
-        Container.BindInterfacesAndSelfTo<TutorialWinView>().FromComponentsInHierarchy().AsSingle();
+        Container.BindInterfacesAndSelfTo<TutorialCompleteView>().FromComponentsInHierarchy().AsSingle();
         
        
         Container.BindInterfacesTo<NavigateStepsPm>().AsSingle();
-        Container.BindInterfacesTo<StartLaboratoryWorkPm>().AsSingle();
-        Container.BindInterfacesTo<WinLaboratoryWorkPM>().AsSingle();
+        Container.BindInterfacesTo<StartTutorialPm>().AsSingle();
+        Container.BindInterfacesTo<WinTutorialPM>().AsSingle();
         
         Container.BindInterfacesTo<TutorialPmAdapter>().AsSingle();
+        Container.BindInterfacesTo<TutorialObserversProvider>().FromComponentsInHierarchy().AsSingle();
     }
 }

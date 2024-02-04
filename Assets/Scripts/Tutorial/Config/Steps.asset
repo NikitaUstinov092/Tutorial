@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d1cfc862698a3c46ae724bd6a2d070e, type: 3}
   m_Name: Steps
   m_EditorClassIdentifier: 
-  _steps: 0000000000000000
+  _steps: 00000000010000000200000003000000

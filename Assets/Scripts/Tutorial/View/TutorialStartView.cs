@@ -1,25 +1,30 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 using Zenject;
 
 namespace StandScene.Tutorial.View
 {
-    public class TutorialStartView: MonoBehaviour, ITutorialView
+    public class TutorialStartView: MonoBehaviour, IInitializable, IDisposable
     {
-        [SerializeField] private GameObject _popup;
+        [SerializeField] 
+        private GameObject _popup;
         
-        [SerializeField] private TextMeshProUGUI _name;
+        [SerializeField] 
+        private TextMeshProUGUI _name;
         
-        [SerializeField] private TextMeshProUGUI _description;
+        [SerializeField] 
+        private TextMeshProUGUI _description;
         
-        [Inject] private IStartLaboratoryWorkPm _pm;
+        [Inject] 
+        private IStartLaboratoryWorkPm _pm;
         
-        void ITutorialView.Start()
+        void IInitializable.Initialize()
         {
             _pm.OnModelStateChanged += Show;
         }
 
-        void ITutorialView.Stop()
+        void IDisposable.Dispose()
         {
             _pm.OnModelStateChanged -= Show;
         }
@@ -39,6 +44,11 @@ namespace StandScene.Tutorial.View
         {
             _name.text = _pm.GetLabName();
             _description.text = _pm.GetDescription();
+        }
+
+        public void Initialize()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

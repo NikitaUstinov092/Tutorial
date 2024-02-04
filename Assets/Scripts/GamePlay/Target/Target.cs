@@ -4,7 +4,7 @@ using Zenject;
 public class Target : MonoBehaviour, IDamage
 {
     [Inject]
-    private HitedTargetCounter _hitTargetCounter;
+    private HitTargetCounter _hitTargetCounter;
     
     void IDamage.TakeDamage(float damage) //TO DO предполагается логика отнимания hp, пока сделал по простому
     {

@@ -1,10 +1,11 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 using Zenject;
 
 namespace StandScene.Tutorial.View
 {
-    public class TutorialStepView: MonoBehaviour, ITutorialView
+    public class TutorialStepView: MonoBehaviour, IInitializable, IDisposable
     {
         [SerializeField] private GameObject _popup;
         
@@ -12,12 +13,12 @@ namespace StandScene.Tutorial.View
         
         [Inject] private INavigateStepsPM _pm;
         
-        void ITutorialView.Start()
+        void IInitializable.Initialize()
         {
             _pm.OnModelStateChanged += Show;
         }
 
-        void ITutorialView.Stop()
+        void IDisposable.Dispose()
         {
             _pm.OnModelStateChanged -= Show;
         }
