@@ -28,7 +28,7 @@ public class PlayerShoot : MonoBehaviour
         if (_bulletParent == null)
             _bulletParent = new GameObject("Bullets");
         
-        _diContainer.InstantiatePrefabForComponent<MoveProvider>(_bullet,_firePoint.position, Quaternion.identity, _bulletParent.transform);
+        _diContainer.InstantiatePrefab(_bullet,_firePoint.position, Quaternion.identity, _bulletParent.transform);
         OnBulletSpawned?.Invoke();
     }
 }
